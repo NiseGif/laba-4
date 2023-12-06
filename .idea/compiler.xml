@@ -9,8 +9,5 @@
         <module name="cgvsu" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cgvsu" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

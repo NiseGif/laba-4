@@ -1,16 +1,11 @@
 package com.cgvsu.render_engine;
-import javax.vecmath.Vector3f;
-import javax.vecmath.Matrix4f;
+import com.cgvsu.Math.Matrix3f;
+import com.cgvsu.Math.Matrix4f;
+import com.cgvsu.Math.Vector3f;
 
 public class Camera {
 
-    public Camera(
-            final Vector3f position,
-            final Vector3f target,
-            final float fov,
-            final float aspectRatio,
-            final float nearPlane,
-            final float farPlane) {
+    public Camera(final Vector3f position, final Vector3f target, final float fov, final float aspectRatio, final float nearPlane, final float farPlane) {
         this.position = position;
         this.target = target;
         this.fov = fov;
@@ -47,11 +42,11 @@ public class Camera {
         this.target.add(target);
     }
 
-    Matrix4f getViewMatrix() {
+   public Matrix4f getViewMatrix() {
         return GraphicConveyor.lookAt(position, target);
     }
 
-    Matrix4f getProjectionMatrix() {
+    public Matrix4f getProjectionMatrix() {
         return GraphicConveyor.perspective(fov, aspectRatio, nearPlane, farPlane);
     }
 
